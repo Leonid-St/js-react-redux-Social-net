@@ -1,4 +1,17 @@
-.content{
-    color:greenyellow;
+.dialogs{
+  display:grid;
+  grid-template-columns:2fr 10fr ;
+}
+.dialogItems {
+
+}
+.dialogItems .active{
+    color:gold;
+}
+.messages{
+
+}
+
+.message{
 
 }

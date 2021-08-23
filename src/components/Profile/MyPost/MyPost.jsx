@@ -1,19 +1,40 @@
+
 import React from 'react';
 import s from './MyPost.module.css';
-import Post from './Post/Post'
-const MyPost = () => {
+import Post from './Post/Post';
+const MyPost = (props) => {
+  let messageElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike} />);
+  let newPostElement = React.createRef();
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    // alert(text);
+    props.addPost(text);
+  
+
+  }
+  let onPostChange=()=>{
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+    console.log(text);
+  }
   return (
-    <div>
-      <div className={s.content}>
-        <div>
-          My Post
+    <div className={s.content}>
+      <div >
+        <div className={s.postsLogo} >
+          <h3>Posts</h3>
         </div>
-        <textarea></textarea>
-        <button>add Post</button>
+        <div>
+          <textarea onChange={onPostChange}
+          ref={newPostElement}
+          value={props.newPostText}
+          />
+        </div>
+        <div>
+          <button onClick={addPost}>add Post</button>
+        </div>
       </div>
-      <div className={s.post}>
-        <Post message='Hi,first post' count='15'/>
-        <Post message='second post' count='20'/>
+      <div className={s.posts}>
+        {messageElements}
       </div>
     </div >
 
