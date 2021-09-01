@@ -5,7 +5,7 @@ import s from './Profileinfo.module.css';
 const Profileinfo = (proprs) => {
     return (<div>
         <div className={s.image}>
-            <img  src='https://pbs.twimg.com/profile_banners/180741633/1589457874/1500x500' />
+            <img  src='https://w-dog.ru/wallpapers/9/13/438469529917926/pirs-kaunti-shtat-vashington-ssha.jpg' />
         </div>
         <div className={s.desctiptionBlock}>
             ava + discription

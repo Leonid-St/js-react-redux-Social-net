@@ -2,27 +2,32 @@
 import React from 'react';
 import s from './MyPost.module.css';
 import Post from './Post/Post';
+
 const MyPost = (props) => {
-  let messageElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike} />);
-  let newPostElement = React.createRef();
-  let addPost = () => {
+ 
+  let messageElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike}  />);
+ 
+  let onAddPost = () => {
     //let text = newPostElement.current.value;
     // alert(text);
-   // props.addPost();
-    props.dispatch({
-      type:'ADD-POST'
-    })
+    props.addPost();
+    // props.dispatch({
+    //   type:'ADD-POST'
+    // })
   }
-  let onPostChange=()=>{
-    let text = newPostElement.current.value;
-    props.dispatch({
-      type: 'UPDATE-NEW-POST-TEXT',
-      newText:text
-    })
-    //updateNewPostText(text);
+
+  let onPostChange=(e)=>{
+    
+    let text = e.target.value;
+    // props.dispatch({
+    //   type: 'UPDATE-NEW-POST-TEXT',
+    //   newText:text
+    // })
+    props.updateNewPostText(text);
     console.log(text);
   }
-  return (
+
+  return ( 
     <div className={s.content}>
       <div >
         <div className={s.postsLogo} >
@@ -30,12 +35,12 @@ const MyPost = (props) => {
         </div>
         <div>
           <textarea onChange={onPostChange}
-          ref={newPostElement}
+          
           value={props.newPostText}
           />
         </div>
         <div>
-          <button onClick={addPost}>add Post</button>
+          <button onClick={onAddPost}>add Post</button>
         </div>
       </div>
       <div className={s.posts}>
