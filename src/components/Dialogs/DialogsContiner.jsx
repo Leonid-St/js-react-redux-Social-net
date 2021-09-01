@@ -1,3 +1,4 @@
+
 import React from "react";
 import Dialogs from './Dialogs';
 import { connect } from "react-redux";
@@ -45,4 +46,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+
 export default DialogsContainer;

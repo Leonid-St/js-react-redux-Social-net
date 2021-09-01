@@ -4,8 +4,9 @@ import s from './MyPost.module.css';
 import Post from './Post/Post';
 
 const MyPost = (props) => {
- 
+
   let messageElements = props.posts.map(p => <Post message={p.message} countLike={p.countLike}  />);
+
  
   let onAddPost = () => {
     //let text = newPostElement.current.value;

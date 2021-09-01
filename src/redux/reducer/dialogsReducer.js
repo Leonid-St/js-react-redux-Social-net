@@ -1,5 +1,6 @@
 
 
+
 const UPDATE_NEW_MESSAGE_BODY = 'NEW-MESSAGE-BODY';
 const SEND_MESSAGE = "SEND-MESSAGE";
 let initial_state ={
@@ -69,4 +70,5 @@ export const SEND_MESSAGEActionCreator = () => {
       }
     )
   };
+
 export default dialogsReducer;

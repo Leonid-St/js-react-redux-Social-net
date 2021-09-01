@@ -13,10 +13,12 @@ import { BrowserRouter } from 'react-router-dom';
 
  let rerenderEntireTree = (state) => {
   ReactDOM.render(
+
     // <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
       <App //state={state}
+
        />
        </Provider>
        </BrowserRouter>,
@@ -27,11 +29,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 
+
 rerenderEntireTree();
 // rerenderEntireTree(store.getState());
  store.subscribe(()=>{
    
    rerenderEntireTree();
  });
+
 
 reportWebVitals();

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import s from './MyPost.module.css';
 import Post from './Post/Post';
@@ -70,4 +71,5 @@ const mapDispatchToProps = (dispatch) => {
  
 }};
 const MyPostContainer = connect(mapStateToProps, mapDispatchToProps)(MyPost);
+
 export default MyPostContainer;
